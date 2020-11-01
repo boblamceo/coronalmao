@@ -5,11 +5,6 @@ import {
   ERROR,
 } from "./Types";
 
-let baseUrl;
-process.env.NODE_ENV
-  ? (baseUrl = process.env.REACT_APP_BASE_URL)
-  : (baseUrl = process.env.BASE_URL);
-
 export const getAllCountries = () => async (dispatch) => {
   setLoading();
   try {
@@ -40,7 +35,7 @@ export const getAllCountries = () => async (dispatch) => {
 export const WWStatsFetch = () => async (dispatch) => {
   setLoading();
   try {
-    const res = await fetch(`${baseUrl}v2/all`);
+    const res = await fetch(`https://corona.lmao.ninja/v2/all`);
     dispatch({ type: GET_WWStats, payload: await res.json() });
   } catch (err) {
     dispatch({ type: ERROR, payload: err.message });

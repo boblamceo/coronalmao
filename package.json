@@ -1,6 +1,5 @@
 {
   "name": "covid19-tracker",
-  "homepage": "https://medelboudali.github.io/COVID19-Tracker/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,8 +8,10 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
+    "css-loader": "^5.0.0",
     "firebase": "^7.24.0",
     "firebase-tools": "^8.13.1",
+    "lodash": "^4.17.20",
     "moment": "^2.24.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.0",
@@ -24,7 +25,8 @@
     "react-select": "^3.1.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "style-loader": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,6 +55,12 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "gh-pages": "^2.2.0",
+    "snowpack": "^2.15.1",
+    "webpack-cli": "^4.1.0"
   }
 }

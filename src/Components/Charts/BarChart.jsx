@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import BarChartItem from './BarChartItem';
-import { connect } from 'react-redux';
-import Spinner from 'react-bootstrap/Spinner';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect } from "react";
+import BarChartItem from "./BarChartItem.jsx";
+import { connect } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import PropTypes from "prop-types";
 
 const BarChart = ({
   DataHistory: {
@@ -14,8 +14,8 @@ const BarChart = ({
     WWCases,
     WWDeaths,
     WWRecovered,
-    currentCountryLoading
-  }
+    currentCountryLoading,
+  },
 }) => {
   const [getDateHistory, setDataHistory] = useState(null);
 
@@ -25,24 +25,24 @@ const BarChart = ({
           Dates: WWDates,
           Cases: WWCases,
           Deaths: WWDeaths,
-          Recovered: WWRecovered
+          Recovered: WWRecovered,
         })
       : setDataHistory({
           Dates,
           Cases,
           Deaths,
-          Recovered
+          Recovered,
         });
-        // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [Dates, WWDates]);
 
   return (
     <>
       {(!WWDates && !WWCases && !WWDeaths && !WWRecovered) ||
       currentCountryLoading ? (
-        <div className='Spinner'>
-          <Spinner animation='border' role='status' variant='success'>
-            <span className='sr-only'>Loading...</span>
+        <div className="Spinner">
+          <Spinner animation="border" role="status" variant="success">
+            <span className="sr-only">Loading...</span>
           </Spinner>
         </div>
       ) : (
@@ -57,8 +57,8 @@ const BarChart = ({
   );
 };
 
-const mapStateToProps = state => ({
-  DataHistory: state.DataHistory
+const mapStateToProps = (state) => ({
+  DataHistory: state.DataHistory,
 });
 
 BarChart.propTypes = {
@@ -70,7 +70,7 @@ BarChart.propTypes = {
   WWCases: PropTypes.array,
   WWDeaths: PropTypes.array,
   WWRecovered: PropTypes.array,
-  currentCountryLoading: PropTypes.bool
+  currentCountryLoading: PropTypes.bool,
 };
 
 export default connect(mapStateToProps)(BarChart);

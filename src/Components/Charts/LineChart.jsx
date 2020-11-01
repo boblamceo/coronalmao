@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import LineChartItem from './LineChartItem';
-import { connect } from 'react-redux';
-import Spinner from 'react-bootstrap/Spinner';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from "react";
+import LineChartItem from "./LineChartItem.jsx";
+import { connect } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import PropTypes from "prop-types";
 
 const LineChart = ({
   DataHistory: {
@@ -14,8 +14,8 @@ const LineChart = ({
     WWDeaths,
     Recovered,
     WWRecovered,
-    currentCountryLoading
-  }
+    currentCountryLoading,
+  },
 }) => {
   const [DataHistory, setDataHistory] = useState(null);
 
@@ -25,13 +25,13 @@ const LineChart = ({
           Dates: WWDates,
           Cases: WWCases,
           Deaths: WWDeaths,
-          Recovered: WWRecovered
+          Recovered: WWRecovered,
         })
       : setDataHistory({
           Dates,
           Cases,
           Deaths,
-          Recovered
+          Recovered,
         });
     // eslint-disable-next-line
   }, [WWDates, Dates]);
@@ -40,9 +40,9 @@ const LineChart = ({
     <>
       {(!WWDates && !WWCases && !WWDeaths && !WWRecovered) ||
       currentCountryLoading ? (
-        <div className='Spinner'>
-          <Spinner animation='border' role='status' variant='success'>
-            <span className='sr-only'>Loading...</span>
+        <div className="Spinner">
+          <Spinner animation="border" role="status" variant="success">
+            <span className="sr-only">Loading...</span>
           </Spinner>
         </div>
       ) : (
@@ -65,11 +65,11 @@ LineChart.propTypes = {
   WWDeaths: PropTypes.array,
   Recovered: PropTypes.array,
   WWRecovered: PropTypes.array,
-  currentCountryLoading: PropTypes.bool
+  currentCountryLoading: PropTypes.bool,
 };
 
-const mapStateToProps = state => ({
-  DataHistory: state.DataHistory
+const mapStateToProps = (state) => ({
+  DataHistory: state.DataHistory,
 });
 
 export default connect(mapStateToProps)(LineChart);

@@ -1,22 +1,22 @@
-import React from 'react';
-import Child from './WWStatsChild';
-import { connect } from 'react-redux';
-import Spinner from 'react-bootstrap/Spinner';
-import PropTypes from 'prop-types';
+import React from "react";
+import Child from "./WWStatsChild.jsx";
+import { connect } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import PropTypes from "prop-types";
 
 const WWStats = ({
   AllCountriesData: { WWStats, allCountriesloading },
-  CurrentCountryData: { currentCountry }
+  CurrentCountryData: { currentCountry },
 }) => {
   const { updated, cases, todayCases, deaths, todayDeaths, recovered, tests } =
     WWStats || {};
 
   return (
-    <div className='WWStats'>
+    <div className="WWStats">
       {WWStats === null || allCountriesloading ? (
-        <div className='Spinner'>
-          <Spinner animation='border' role='status' variant='success'>
-            <span className='sr-only'>Loading...</span>
+        <div className="Spinner">
+          <Spinner animation="border" role="status" variant="success">
+            <span className="sr-only">Loading...</span>
           </Spinner>
         </div>
       ) : currentCountry === null || allCountriesloading ? (
@@ -49,12 +49,12 @@ const WWStats = ({
 WWStats.prototype = {
   WWStats: PropTypes.object,
   allCountriesloading: PropTypes.bool,
-  currentCountry: PropTypes.object
+  currentCountry: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   AllCountriesData: state.AllCountries,
-  CurrentCountryData: state.CurrentCountryData
+  CurrentCountryData: state.CurrentCountryData,
 });
 
 export default connect(mapStateToProps)(WWStats);

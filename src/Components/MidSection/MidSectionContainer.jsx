@@ -2,12 +2,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import AllCountriesList from "./AllCountriesList";
-import LineChart from "../Charts/LineChart";
-import BarChart from "../Charts/BarChart";
-import PieChart from "../Charts/pieChart";
-import GlobalMap from "../Map/GlobalMap";
-import WWStats from "./WWStats";
+import AllCountriesList from "./AllCountriesList.jsx";
+import LineChart from "../Charts/LineChart.jsx";
+import BarChart from "../Charts/BarChart.jsx";
+import PieChart from "../Charts/pieChart.jsx";
+import GlobalMap from "../Map/GlobalMap.jsx";
+import WWStats from "./WWStats.jsx";
 
 const MidSectionContainer = () => {
   return (

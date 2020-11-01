@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PieChartItem from "./pieChartItem";
+import PieChartItem from "./pieChartItem.jsx";
 import { connect } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
 import PropTypes from "prop-types";
